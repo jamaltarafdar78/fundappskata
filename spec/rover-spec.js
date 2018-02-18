@@ -27,7 +27,7 @@ describe('running tests', () => {
         expectedNewState = {
             x_pos: 0,
             y_pos: 1, 
-            heading: N
+            heading: 'N'
         }
     
         it('SHOULD remain at inital state', () => {
