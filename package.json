@@ -1,0 +1,23 @@
+{
+  "name": "fundappskata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine ./spec/rover-spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamaltarafdar78/fundappskata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamaltarafdar78/fundappskata/issues"
+  },
+  "homepage": "https://github.com/jamaltarafdar78/fundappskata#readme",
+  "devDependencies": {
+    "jasmine": "^3.0.0"
+  }
+}
