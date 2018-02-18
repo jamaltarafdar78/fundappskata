@@ -5,19 +5,19 @@ const initialState = {
 }
 
 const move = (moveComm) => {
-    if(moveComm === '' || !moveComm) return initialState;
+    if(moveComm==='' || !moveComm) return initialState;
 
     let newState = initialState;
 
     const movements = moveComm.split();
     movements.forEach(movement => {
-        newState = handleMove(movement, newState)
+        newState = handleSingleMove(movement, newState)
     });
 
     return newState;
 }
 
-const handleMove = (movement, state) => {
+const handleSingleMove = (movement, state) => {
 
     const {x_pos, y_pos, heading} = state;
 
@@ -26,8 +26,8 @@ const handleMove = (movement, state) => {
     switch (movement.toLowerCase()) {
         case 'f':
             newState = {
-                x_pos: heading.toLowerCase() =='e' ? x_pos + 1 :  x_pos - 1,
-                y_pos: heading.toLowerCase() =='n' ? y_pos + 1 :  y_pos - 1,
+                x_pos: determineNewXPos(heading, x_pos),
+                y_pos: determineNewYPos(heading, y_pos),
                 heading
             }
             break;
@@ -45,10 +45,30 @@ const handleMove = (movement, state) => {
     return newState;
 }
 
+const determineNewXPos = (heading, x_pos) => {
+
+    const headingL = heading.toLowerCase();
+
+    return  headingL ==='e' ? x_pos + 1 :
+            headingL ==='w' ?  x_pos - 1 :  
+            x_pos
+}
+
+
+const determineNewYPos = (heading, y_pos) => {
+
+    const headingL = heading.toLowerCase()
+
+    return  headingL ==='n' ? y_pos + 1 :
+            headingL ==='s' ?  y_pos - 1 :  
+            y_pos
+}
+
 module.exports = {
     F: 'f',
     B: 'b',
     L: 'l',
     R: 'r',
-    move: move
+    move: move,
+    moveOneCommand: handleSingleMove
 }
