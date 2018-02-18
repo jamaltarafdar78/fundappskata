@@ -9,13 +9,12 @@ const move = (moveComm) => {
 
     let newState = initialState;
 
-    const movements = moveComm.split();
-    movements.forEach(movement => {
-        newState = handleSingleMove(movement, newState)
-    });
-
-    return newState;
+    const movements = moveComm.split('');
+    
+    return movements.reduce(moveReducer, initialState);
 }
+
+const moveReducer = (acc, current) => handleSingleMove(current, acc)
 
 const handleSingleMove = (movement, state) => {
 
