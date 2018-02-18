@@ -31,7 +31,22 @@ describe('running tests', () => {
             heading: 'N'
         }
     
-        it('SHOULD remain at inital state', () => {
+        it('SHOULD be at expected position (0, 1) heading N', () => {
+            expect(roverNewState).toEqual(expectedNewState);
+        })
+    })
+
+    describe('move rover R', () => {
+
+        roverNewState = rover.move('r');
+        
+        expectedNewState = {
+            x_pos: 1,
+            y_pos: 0, 
+            heading: 'E'
+        }
+    
+        it('SHOULD be at expected position (1, 0) heading E', () => {
             expect(roverNewState).toEqual(expectedNewState);
         })
     })

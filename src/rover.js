@@ -31,6 +31,13 @@ const handleMove = (movement, state) => {
                 heading: 'N'
             }
             break;
+        case 'r':
+            newState = {
+                x_pos: x_pos + 1,
+                y_pos: y_pos,
+                heading: 'E'
+            }
+            break;
         default:
             break;
     }
