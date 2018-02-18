@@ -61,4 +61,19 @@ describe('running tests', () => {
             expect(roverNewState).toEqual(expectedNewState);
         })
     })
+
+    describe('move rover RF', () => {
+
+        const roverNewState = rover.move('RF');
+        
+        const expectedNewState = {
+            x_pos: 1,
+            y_pos: 0, 
+            heading: 'E'
+        }
+    
+        it('SHOULD be at expected position (1, 0) heading E', () => {
+            expect(roverNewState).toEqual(expectedNewState);
+        })
+    })
 });
