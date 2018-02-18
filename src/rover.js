@@ -5,7 +5,37 @@ const initialState = {
 }
 
 const move = (moveComm) => {
-    if(moveComm === '') return initialState;
+    if(moveComm === '' || !moveComm) return initialState;
+
+    let newState = initialState;
+
+    const movements = moveComm.split();
+    movements.forEach(movement => {
+        newState = handleMove(movement, newState)
+    });
+
+    return newState;
+}
+
+const handleMove = (movement, state) => {
+
+    const {x_pos, y_pos} = state;
+
+    let newState = state;
+
+    switch (movement.toLowerCase()) {
+        case 'f':
+            newState = {
+                x_pos: x_pos,
+                y_pos: y_pos + 1,
+                heading: 'N'
+            }
+            break;
+        default:
+            break;
+    }
+
+    return newState;
 }
 
 module.exports = {

@@ -20,9 +20,10 @@ describe('running tests', () => {
             expect(roverNewState).toEqual(expectedNewState);
         })
     })
+    
     describe('move rover F', () => {
 
-        roverNewState = rover.move(rover.F);
+        roverNewState = rover.move('f');
         
         expectedNewState = {
             x_pos: 0,
