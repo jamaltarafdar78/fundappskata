@@ -97,4 +97,21 @@ describe('running tests', () => {
             })
         })
     })
+
+    describe('move rover FR', () => {
+
+        const expectedNewState = {
+            x_pos: 0,
+            y_pos: 1, 
+            heading: 'E'
+        }
+
+        describe('using move api', () => {
+            const roverNewState = rover.move('FR');
+        
+            it('SHOULD be at expected position (0, 1) heading E', () => {
+                expect(roverNewState).toEqual(expectedNewState);
+            })
+        })
+    })
 });
