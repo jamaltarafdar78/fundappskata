@@ -41,12 +41,12 @@ describe('running tests', () => {
         roverNewState = rover.move('r');
         
         expectedNewState = {
-            x_pos: 1,
+            x_pos: 0,
             y_pos: 0, 
             heading: 'E'
         }
     
-        it('SHOULD be at expected position (1, 0) heading E', () => {
+        it('SHOULD be at expected position (0, 0) heading E', () => {
             expect(roverNewState).toEqual(expectedNewState);
         })
     })

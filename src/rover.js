@@ -33,7 +33,7 @@ const handleMove = (movement, state) => {
             break;
         case 'r':
             newState = {
-                x_pos: x_pos + 1,
+                x_pos: x_pos,
                 y_pos: y_pos,
                 heading: 'E'
             }
