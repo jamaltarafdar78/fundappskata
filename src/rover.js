@@ -19,16 +19,16 @@ const move = (moveComm) => {
 
 const handleMove = (movement, state) => {
 
-    const {x_pos, y_pos} = state;
+    const {x_pos, y_pos, heading} = state;
 
     let newState = state;
 
     switch (movement.toLowerCase()) {
         case 'f':
             newState = {
-                x_pos: x_pos,
-                y_pos: y_pos + 1,
-                heading: 'N'
+                x_pos: heading.toLowerCase() =='e' ? x_pos + 1 :  x_pos - 1,
+                y_pos: heading.toLowerCase() =='n' ? y_pos + 1 :  y_pos - 1,
+                heading
             }
             break;
         case 'r':
